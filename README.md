@@ -30,3 +30,9 @@ You'll want to [clone this repository](https://help.github.com/articles/cloning-
   * Start Phoenix endpoint with `iex -S mix phx.server`
 
 Now you can visit [`localhost:4000`](http://localhost:4000) from your browser.
+
+## Contributing
+
+All contributions are more than welcome! PRs without tests won't be accepted.
+
+Please, follow the [guidelines](https://github.com/jungsoft/elixir-style-guide)
