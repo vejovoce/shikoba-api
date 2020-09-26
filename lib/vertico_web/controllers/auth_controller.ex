@@ -1,4 +1,3 @@
-
 defmodule VerticoWeb.AuthController do
   use VerticoWeb, :controller
 
