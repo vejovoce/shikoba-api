@@ -18,15 +18,18 @@ defmodule Shikoba.Accounts.User do
     field :password, :string, virtual: true
     field :role, RoleEnum, default: :user
     field :verified, :boolean, default: false
+    field :phones, {:array, :string}
+    field :date_of_birth, :date
+    field :photo, :string
 
     timestamps()
   end
 
-  @unverified_permitted_fields ~w(email password)a
-  @unverified_required_fields ~w(email password role verified)a
+  @unverified_permitted_fields ~w(email password photo phones date_of_birth)a
+  @unverified_required_fields ~w(email password role verified date_of_birth)a
 
-  @update_permitted_fields ~w(role)a
-  @update_required_fields ~w(role)a
+  @update_permitted_fields ~w(role photo phones date_of_birth)a
+  @update_required_fields ~w(role date_of_birth)a
 
   @verify_fields ~w(verified)a
   @password_fields ~w(password)a
@@ -37,12 +40,14 @@ defmodule Shikoba.Accounts.User do
     |> validate_required(@unverified_required_fields)
     |> Fields.EctoValidator.validate_email(:email)
     |> unique_constraint(:email)
+    |> update_change(:phones, &clean_string_phone(&1))
     |> base_password_changeset()
   end
 
   def update_changeset(%__MODULE__{} = user, attrs) do
     user
     |> cast(attrs, @update_permitted_fields)
+    |> update_change(:phones, &clean_string_phone(&1))
     |> validate_required(@update_required_fields)
   end
 
@@ -70,4 +75,7 @@ defmodule Shikoba.Accounts.User do
   end
 
   defp put_hashed_password(current_changeset), do: current_changeset
+
+  def clean_string_phone([]), do: []
+  def clean_string_phone(input), do: Enum.map(input, & Regex.replace(~r/[^0-9]/, &1, ""))
 end
