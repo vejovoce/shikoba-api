@@ -1,4 +1,4 @@
-defmodule Vertico.DataCase do
+defmodule Shikoba.DataCase do
   @moduledoc """
   This module defines the setup for tests requiring
   access to the application's data layer.
@@ -18,21 +18,21 @@ defmodule Vertico.DataCase do
 
   using do
     quote do
-      alias Vertico.Repo
+      alias Shikoba.Repo
 
       import Ecto
       import Ecto.Changeset
       import Ecto.Query
-      import Vertico.DataCase
-      import Vertico.Factory
+      import Shikoba.DataCase
+      import Shikoba.Factory
     end
   end
 
   setup tags do
-    :ok = Sandbox.checkout(Vertico.Repo)
+    :ok = Sandbox.checkout(Shikoba.Repo)
 
     unless tags[:async] do
-      Sandbox.mode(Vertico.Repo, {:shared, self()})
+      Sandbox.mode(Shikoba.Repo, {:shared, self()})
     end
 
     :ok

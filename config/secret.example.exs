@@ -1,6 +1,6 @@
 import Mix.Config
 
 # Configure your database
-config :vertico, Vertico.Repo,
+config :shikoba, Shikoba.Repo,
   username: "postgres",
   password: "postgres"

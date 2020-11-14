@@ -1,9 +1,9 @@
-defmodule Vertico.MixProject do
+defmodule Shikoba.MixProject do
   use Mix.Project
 
   def project do
     [
-      app: :vertico,
+      app: :shikoba,
       version: "0.1.0",
       elixir: "~> 1.10",
       elixirc_options: [warnings_as_errors: System.get_env("WARNINGS_AS_ERRORS") == "true"],
@@ -30,7 +30,7 @@ defmodule Vertico.MixProject do
 
   def application do
     [
-      mod: {Vertico.Application, []},
+      mod: {Shikoba.Application, []},
       extra_applications: [:logger, :runtime_tools]
     ]
   end
@@ -40,7 +40,7 @@ defmodule Vertico.MixProject do
 
   defp releases do
     [
-      vertico: [
+      shikoba: [
         include_executables_for: [:unix]
       ]
     ]

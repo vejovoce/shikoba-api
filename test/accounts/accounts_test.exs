@@ -1,8 +1,8 @@
-defmodule Vertico.Accounts.AccountsTest do
-  use Vertico.DataCase
+defmodule Shikoba.Accounts.AccountsTest do
+  use Shikoba.DataCase
   use Bamboo.Test
 
-  alias Vertico.{
+  alias Shikoba.{
     Accounts,
     Accounts.User,
     Auth.Tokens,
