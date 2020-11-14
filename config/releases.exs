@@ -5,14 +5,14 @@ homologation? = stage === "homologation"
 
 get_mandatory_env = if homologation?, do: &System.get_env/1, else: &System.fetch_env!/1
 
-config :vertico,
+config :shikoba,
   homologation?: homologation?
 
-config :vertico, Vertico.Repo,
+config :shikoba, Shikoba.Repo,
   url: System.fetch_env!("DATABASE_URL"),
   pool_size: System.get_env("POOL_SIZE", "10") |> String.to_integer()
 
-config :vertico, VerticoWeb.Endpoint,
+config :shikoba, ShikobaWeb.Endpoint,
   url: [
     scheme: "https",
     host: System.fetch_env!("HOST"),
@@ -31,16 +31,16 @@ config :sentry,
     host: System.fetch_env!("HOST")
   }
 
-config :vertico, VerticoWeb.BasicAuth,
+config :shikoba, ShikobaWeb.BasicAuth,
   username: System.get_env("DASHBOARD_USER", "admin"),
   password: System.fetch_env!("DASHBOARD_PASSWORD")
 
-config :vertico, Vertico.Guardian,
+config :shikoba, Shikoba.Guardian,
   secret_key: System.fetch_env!("GUARDIAN_SECRET_KEY")
 
-config :vertico, :cors,
+config :shikoba, :cors,
   origins: "https://" <> System.fetch_env!("HOST")
 
-config :vertico, Vertico.Mailer,
+config :shikoba, Shikoba.Mailer,
   adapter: (if homologation?, do: Bamboo.LocalAdapter, else: Bamboo.MandrillAdapter),
   api_key: get_mandatory_env.("MAILCHIMP_API_KEY")

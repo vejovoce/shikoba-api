@@ -2,19 +2,19 @@ import Mix.Config
 
 require Logger
 
-config :vertico, Vertico.Repo,
-  database: "vertico_dev",
+config :shikoba, Shikoba.Repo,
+  database: "shikoba_dev",
   hostname: "localhost",
   show_sensitive_data_on_connection_error: true,
   pool_size: 10
 
-config :vertico, VerticoWeb.Endpoint,
+config :shikoba, ShikobaWeb.Endpoint,
   http: [port: 4000],
   debug_errors: true,
   code_reloader: true,
   check_origin: false
 
-config :vertico, VerticoWeb.BasicAuth,
+config :shikoba, ShikobaWeb.BasicAuth,
   username: "admin",
   password: "123123"
 
@@ -28,10 +28,10 @@ config :phoenix, :stacktrace_depth, 20
 # Initialize plugs at runtime for faster development compilation
 config :phoenix, :plug_init_mode, :runtime
 
-config :vertico, Vertico.Mailer,
+config :shikoba, Shikoba.Mailer,
   adapter: Bamboo.LocalAdapter
 
-config :vertico, :environment, :dev
+config :shikoba, :environment, :dev
 
 if File.exists? "config/dev.secret.exs" do
   import_config "dev.secret.exs"

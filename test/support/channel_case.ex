@@ -1,4 +1,4 @@
-defmodule VerticoWeb.ChannelCase do
+defmodule ShikobaWeb.ChannelCase do
   @moduledoc """
   This module defines the test case to be used by
   channel tests.
@@ -22,15 +22,15 @@ defmodule VerticoWeb.ChannelCase do
       use Phoenix.ChannelTest
 
       # The default endpoint for testing
-      @endpoint VerticoWeb.Endpoint
+      @endpoint ShikobaWeb.Endpoint
     end
   end
 
   setup tags do
-    :ok = Sandbox.checkout(Vertico.Repo)
+    :ok = Sandbox.checkout(Shikoba.Repo)
 
     unless tags[:async] do
-      Sandbox.mode(Vertico.Repo, {:shared, self()})
+      Sandbox.mode(Shikoba.Repo, {:shared, self()})
     end
 
     :ok
