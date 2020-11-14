@@ -25,11 +25,28 @@ defmodule Shikoba.Accounts.User do
     timestamps()
   end
 
-  @unverified_permitted_fields ~w(email password photo phones date_of_birth)a
-  @unverified_required_fields ~w(email password role verified date_of_birth)a
+  @unverified_permitted_fields ~w(
+    email
+    password
+    photo
+    phones
+    date_of_birth
+  )a
+  @unverified_required_fields ~w(
+    email
+    password
+    role
+    verified
+    date_of_birth
+  )a
 
-  @update_permitted_fields ~w(role photo phones date_of_birth)a
-  @update_required_fields ~w(role date_of_birth)a
+  @update_permitted_fields ~w(
+    role
+    photo
+    phones
+    date_of_birth
+  )a
+  @update_required_fields @update_permitted_fields -- ~w(photo phones)a
 
   @verify_fields ~w(verified)a
   @password_fields ~w(password)a
