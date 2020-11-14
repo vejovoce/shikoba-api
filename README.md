@@ -2,12 +2,12 @@
    <img src="docs/images/logo.png" width="450"/>
 </p>
 
-> This is the Elixir and Phoenix backend API for the Shikoba Platform
+> This is the Elixir and Phoenix backend API for Vertico
 
-[![Languages](https://img.shields.io/github/languages/count/vejovoce/shikoba-api?color=%23000&style=flat-square)](#)
-[![Stars](https://img.shields.io/github/stars/vejovoce/shikoba-api?color=000&style=flat-square)](https://github.com/vejovoce/shikoba-api/stargazers)
-[![Forks](https://img.shields.io/github/forks/vejovoce/shikoba-api?color=%23000&style=flat-square)](https://github.com/vejovoce/shikoba-api/network/members)
-[![Contributors](https://img.shields.io/github/contributors/vejovoce/shikoba-api?color=000&style=flat-square)](https://github.com/vejovoce/shikoba-api/graphs/contributors)
+[![Languages](https://img.shields.io/github/languages/count/vertico/vertico-api?color=%23000&style=flat-square)](#)
+[![Stars](https://img.shields.io/github/stars/vertico/vertico-api?color=000&style=flat-square)](https://github.com/vertico/vertico-api/stargazers)
+[![Forks](https://img.shields.io/github/forks/vertico/vertico-api?color=%23000&style=flat-square)](https://github.com/vertico/vertico-api/network/members)
+[![Contributors](https://img.shields.io/github/contributors/vertico/vertico-api?color=000&style=flat-square)](https://github.com/vertico/vertico-api/graphs/contributors)
 
 ## Installation
 
@@ -20,7 +20,7 @@ You will need to install the following:
 
 ### Clone this repository
 
-You'll want to [clone this repository](https://help.github.com/articles/cloning-a-repository/) with `git clone git@github.com:vejovove/shikoba-api.git`. If you plan on contributing, you'll want to fork it too!
+You'll want to [clone this repository](https://help.github.com/articles/cloning-a-repository/) with `git clone git@github.com:vertico/vertico-api.git`. If you plan on contributing, you'll want to fork it too!
 
 ## To start your Phoenix server:
 

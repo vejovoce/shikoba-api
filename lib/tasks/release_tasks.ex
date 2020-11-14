@@ -1,11 +1,11 @@
-defmodule Shikoba.ReleaseTasks do
+defmodule Vertico.ReleaseTasks do
   @moduledoc """
   Tasks to facilitate deployment and management in production.
   """
 
   alias Ecto.Migrator
 
-  @application :shikoba
+  @application :vertico
 
   def migrate do
     for repo <- repos() do

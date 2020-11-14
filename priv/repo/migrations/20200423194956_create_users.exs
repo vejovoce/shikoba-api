@@ -1,7 +1,7 @@
-defmodule Shikoba.Repo.Migrations.CreateUsers do
+defmodule Vertico.Repo.Migrations.CreateUsers do
   use Ecto.Migration
 
-  alias Shikoba.Accounts.User.RoleEnum
+  alias Vertico.Accounts.User.RoleEnum
 
   def change do
     execute "CREATE EXTENSION IF NOT EXISTS citext", ""

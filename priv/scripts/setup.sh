@@ -1,7 +1,7 @@
 #!/bin/bash
 set -e
 
-/app/bin/shikoba eval "Shikoba.ReleaseTasks.migrate"
-/app/bin/shikoba eval "Shikoba.ReleaseTasks.seed"
+/app/bin/vertico eval "Vertico.ReleaseTasks.migrate"
+/app/bin/vertico eval "Vertico.ReleaseTasks.seed"
 
-exec /app/bin/shikoba "$@"
+exec /app/bin/vertico "$@"

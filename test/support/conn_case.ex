@@ -1,4 +1,4 @@
-defmodule ShikobaWeb.ConnCase do
+defmodule VerticoWeb.ConnCase do
   @moduledoc """
   This module defines the test case to be used by
   tests that require setting up a connection.
@@ -20,21 +20,21 @@ defmodule ShikobaWeb.ConnCase do
     quote do
       import Plug.Conn
       import Phoenix.ConnTest
-      alias ShikobaWeb.Router.Helpers, as: Routes
-      import Shikoba.Factory
+      alias VerticoWeb.Router.Helpers, as: Routes
+      import Vertico.Factory
 
       import TestHelper
 
       # The default endpoint for testing
-      @endpoint ShikobaWeb.Endpoint
+      @endpoint VerticoWeb.Endpoint
     end
   end
 
   setup tags do
-    :ok = Sandbox.checkout(Shikoba.Repo)
+    :ok = Sandbox.checkout(Vertico.Repo)
 
     unless tags[:async] do
-      Sandbox.mode(Shikoba.Repo, {:shared, self()})
+      Sandbox.mode(Vertico.Repo, {:shared, self()})
     end
 
     {:ok, conn: Phoenix.ConnTest.build_conn()}

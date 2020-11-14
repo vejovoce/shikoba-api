@@ -1,19 +1,19 @@
 {:ok, _} = Application.ensure_all_started(:ex_machina)
 ExUnit.start()
-Ecto.Adapters.SQL.Sandbox.mode(Shikoba.Repo, :manual)
+Ecto.Adapters.SQL.Sandbox.mode(Vertico.Repo, :manual)
 
 defmodule TestHelper do
   import Plug.Conn
   import Phoenix.ConnTest
   use ExUnit.Case
 
-  import Shikoba.Factory
+  import Vertico.Factory
 
-  alias Shikoba.Accounts.User
-  alias Shikoba.Auth.Tokens
-  alias Shikoba.Repo
+  alias Vertico.Accounts.User
+  alias Vertico.Auth.Tokens
+  alias Vertico.Repo
 
-  @endpoint ShikobaWeb.Endpoint
+  @endpoint VerticoWeb.Endpoint
 
   def post_query(conn, query, variables \\ %{}, opts \\ %{}) do
     params =

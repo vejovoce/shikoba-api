@@ -5,19 +5,19 @@
 # Inside the script, you can read and write to any of your
 # repositories directly:
 #
-#     Shikoba.Repo.insert!(%Shikoba.SomeSchema{})
+#     Vertico.Repo.insert!(%Vertico.SomeSchema{})
 #
 # We recommend using the bang functions (`insert!`, `update!`
 # and so on) as they will fail if something goes wrong.
 
-import Shikoba.Factory
+import Vertico.Factory
 
 _user_1 = insert(:user,
-  email: "user_1@shikoba.com",
+  email: "user_1@vertico.com",
   role: :user
 )
 
 _admin = insert(:user,
-  email: "admin@shikoba.com",
+  email: "admin@vertico.com",
   role: :admin
 )
