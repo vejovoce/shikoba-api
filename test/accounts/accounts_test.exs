@@ -11,7 +11,7 @@ defmodule Shikoba.Accounts.AccountsTest do
   describe "create_unverified_user/1" do
     test "creates an user and returns a session" do
       link_generator = fn _token -> "www.test.com" end
-      params = %{email: "email@email.com", password: "12345678"}
+      params = %{email: "email@email.com", password: "12345678", date_of_birth: Timex.today()}
       assert {:ok, token} = Accounts.create_unverified_user(params, link_generator)
 
       assert is_binary(token)

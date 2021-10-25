@@ -13,7 +13,8 @@ defmodule Shikoba.Factory do
       email: sequence(:email, &"email-#{&1}@example.com"),
       role: :user,
       verified: true,
-      hashed_password: @hashed_password
+      hashed_password: @hashed_password,
+      date_of_birth: Timex.today(),
     }
   end
 end

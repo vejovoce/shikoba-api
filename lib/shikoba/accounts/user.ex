@@ -18,15 +18,16 @@ defmodule Shikoba.Accounts.User do
     field :password, :string, virtual: true
     field :role, RoleEnum, default: :user
     field :verified, :boolean, default: false
+    field :date_of_birth, :date
 
     timestamps()
   end
 
-  @unverified_permitted_fields ~w(email password)a
-  @unverified_required_fields ~w(email password role verified)a
+  @unverified_permitted_fields ~w(email password date_of_birth)a
+  @unverified_required_fields ~w(email password role verified date_of_birth)a
 
-  @update_permitted_fields ~w(role)a
-  @update_required_fields ~w(role)a
+  @update_permitted_fields ~w(role date_of_birth)a
+  @update_required_fields ~w(role date_of_birth)a
 
   @verify_fields ~w(verified)a
   @password_fields ~w(password)a

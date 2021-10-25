@@ -12,6 +12,7 @@ defmodule Shikoba.Repo.Migrations.CreateUsers do
       add :hashed_password, :string, null: false
       add :verified, :boolean, default: false, null: false
       add :role, RoleEnum.type()
+      add :date_of_birth, :date, null: false
 
       timestamps()
     end

@@ -22,6 +22,7 @@ defmodule ShikobaWeb.GraphQL.Accounts.UserSchema do
     field :email, :string
     field :verified, :boolean
     field :role, :user_role_enum
+    field :date_of_birth, :date
   end
 
   object :user_queries do
@@ -51,6 +52,7 @@ defmodule ShikobaWeb.GraphQL.Accounts.UserSchema do
     field :create_unverified_user, :string do
       arg :email, non_null(:string)
       arg :password, non_null(:string)
+      arg :date_of_birth, non_null(:date)
 
       middleware Rajska.QueryAuthorization, permit: :all
       middleware Rajska.RateLimiter,
